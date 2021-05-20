@@ -1,0 +1,906 @@
+@import 'base/mixins';
+@import 'base/reset';
+@import 'base/variables';
+@import 'base/fonts';
+
+// font-family: 'Montserrat', sans-serif;
+
+//Header and Promo
+
+.header_block{
+    height: 700px;
+    width: 100%;
+    background-image: url(images/Background_header.png);
+    margin: 0 auto;
+    
+    .logo_login_signup{
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        .logo{
+            font: {
+                family:'Montserrat', sans-serif;
+                style: normal;
+                weight: bold;
+                size: 20px;
+            }
+            line-height: 24px;
+            color: #FFFFFF;
+            margin-top: 46px;
+        }
+        .log_in_button{
+            font: {
+                family:'Montserrat', sans-serif;
+                style: normal;
+                weight: normal;
+                size: 14px;
+            }
+            line-height: 17px; 
+            color: #FFFFFF;
+            background-color: transparent;
+            border-color: transparent;
+            margin-top: 46px;
+            
+            .log_in_button_text{
+                color: white;
+                text-decoration: none;
+            }
+            
+        }
+        .sign_up_button{
+            border: 2px solid #FFFFFF;
+            box-sizing: border-box;
+            border-radius: 40px;
+            background-color: transparent;
+            @include paramenters (90px, 36px);
+            margin-top:46px;
+            .sign_up_button_text{
+                font: {
+                family:'Montserrat', sans-serif;
+                style: normal;
+                weight: normal;
+                size: 14px;
+            }
+            line-height: 17px; 
+            color: #FFFFFF;
+            text-decoration: none;
+            }
+        }
+    }
+    .header_block_content{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        .title{
+            font: {
+                family:'Montserrat', sans-serif;
+                style: normal;
+                weight: bold;
+                size: 52px;
+            }
+            line-height: 63px;
+            text-align: center;
+            color: #FFFFFF;
+            margin-top: 144px;
+        }
+        .subtitle{
+            font: {
+                family:'Roboto', sans-serif;
+                style: normal;
+                weight: 300;
+                size: 24px;
+            }
+            line-height: 24px;
+            color: #F7F3F2;
+            margin-top: 25px;
+        }
+        .red_button{
+            @include paramenters (225px, 40px);
+            background: #FF4E50;
+            border-radius: 40px;
+            border-color: transparent;
+            margin-top: 33px;
+        }
+        .button_link{
+                text-decoration: none;
+                font: {
+                family:'Montserrat', sans-serif;
+                style: normal;
+                weight: bold;
+                size: 14px;
+            }
+            line-height: 17px;
+            color: #FFFFFF;
+            }
+    }
+}
+header{
+    padding-bottom: 95px;
+}
+
+//How-it-works section
+
+.how_it_works{ 
+    
+    .how_it_works_title{
+        font: {
+            family:'Montserrat', sans-serif;
+            style: normal;
+            weight: bold;
+            size: 26px;
+        }
+        line-height: 32px;
+        text-align: center;
+        color: #444444;
+    }
+    .how_it_works_main_block{
+        display: flex;
+        justify-content: center;
+        flex-wrap: nowrap;
+        margin-top:30px;
+        
+        .step-1{
+            background-image: url(images/legs.png);
+            @include steps (300px, 400px);
+            position: relative;    
+            margin-right: 20px;        
+        }
+        .step-2{
+            background-image: url(images/drive.png);
+            @include steps (300px, 400px);
+            margin-right: 20px;        
+            position: relative;
+            
+        }
+        .step-3{
+            background-image: url(images/sand.png);
+            @include steps (300px, 400px);
+            position: relative;
+            
+        }
+        .step-1-info{
+                position: absolute;
+                bottom:21px;
+                left: 25px;
+                right:25px;
+
+                .step-1-description{
+                    font-family: 'Roboto', sans-serif;
+                    font-style: normal;
+                    font-weight: 100;
+                    font-size: 14px;
+                    line-height: 14px;
+                    color: #e3e3e3ab; 
+                    padding-top: 10px;
+                }
+                .step-1-title{
+                    font-family:'Montserrat', sans-serif;
+                    font-style: normal;
+                    font-weight: bold;
+                    font-size: 24px;
+                    line-height: 26px;
+                    color: #FFFFFF;
+                    letter-spacing: 0.05em;
+                    margin-top:21px;
+                }
+                .step-1-button{
+                    @include steps (70px, 20px); 
+                    border-color: transparent;
+                    left: 25px;
+                    top: 219px;
+                    background: #FF4E50;
+                    border-radius: 40px;
+                    .step-1-button-link{
+                        text-decoration: none;
+                        font-family: 'Montserrat', sans-serif;
+                        font-style: normal;
+                        font-weight: normal;
+                        font-size: 10px;
+                        line-height: 12px;
+                        color: #FFFFFF;
+                        letter-spacing: 0.2em;
+                        margin: 0 auto;
+                    }
+                }
+            }
+            .step-2-info{
+                @extend .step-1-info;
+                .step-2-description{
+                    @extend .step-1-description;
+                    padding-top: 5px;
+                }
+                .step-2-title{
+                    @extend .step-1-title;
+                     margin-top:17px;
+                }
+                .step-2-button{
+                    @extend .step-1-button;
+                    .step-2-button-link{
+                        @extend .step-1-button-link;
+                    }
+                }
+            }
+            
+    }
+    .step-3-info{
+        @extend .step-1-info;
+        .step-3-description{
+                    @extend .step-1-description;
+                    padding-top: 5px;
+                }
+                .step-3-title{
+                    @extend .step-1-title;
+                     margin-top:17px;
+                }
+                .step-3-button{
+                    @extend .step-1-button;
+                    .step-3-button-link{
+                        @extend .step-1-button-link;
+                    }
+                }
+    }
+    
+}
+//Meet Partner
+
+.meet-partner-block{
+    margin-top: 90px;
+}
+.meet-partner-section{
+    
+    .meet-partner-title{
+        font: {
+            family:'Montserrat', sans-serif;
+            style: normal;
+            weight: bold;
+            size: 26px;
+        }
+        line-height: 32px;
+        text-align: center;
+        color:#444444;
+    }
+    .persons{
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        .persons-first-block{
+            display: flex;
+            flex-direction: row;
+        }
+        .Bradley{
+            @include paramenters (221px, 205px);
+            padding: {
+                top: 34px;
+                right: 19px;
+                bottom: 19px;
+
+            }
+            .Bradley-pic{ 
+                @include paramenters (120px, 120px);
+                margin: 0 auto;
+            }
+            .Bradley-name{
+                text-align: center;
+                font-family: 'Montserrat', sans-serif;
+                font-style: normal;
+                font-weight: bold;
+                font-size: 14px;
+                line-height: 17px;
+                color: #444444;
+                margin-top: 17px;
+                padding-bottom: 22px;
+            }
+            .Bradley-portfolio{
+                text-align: center;
+                font-family: 'Roboto', sans-serif;
+                font-style: normal;
+                font-weight: 300;
+                font-size: 14px;
+                line-height: 14px;
+                color: #666666;
+
+            }
+        }
+        .Marie{
+            @include paramenters (221px, 205px);
+            padding: {
+                top: 34px;
+                right: 19px;
+                bottom: 19px;
+                
+            }
+            .Marie-pic{ 
+                @include paramenters (120px, 120px);
+                margin: 0 auto;
+            }
+            .Marie-name{
+                text-align: center;
+                font-family: 'Montserrat', sans-serif;
+                font-style: normal;
+                font-weight: bold;
+                font-size: 14px;
+                line-height: 17px;
+                color: #444444;
+                margin-top: 17px;
+                padding-bottom: 22px;
+            }
+            .Marie-portfolio{
+                text-align: center;
+                font-family: 'Roboto', sans-serif;
+                font-style: normal;
+                font-weight: 300;
+                font-size: 14px;
+                line-height: 14px;
+                color: #666666;
+            }
+        }
+        .persons-second-block{
+            display: flex;
+            flex-direction: row;
+        }
+        .Diana{
+            @include paramenters (221px, 205px);
+            padding: {
+                top: 34px;
+                right: 19px;
+                bottom: 19px;
+                
+            }
+            .Diana-pic{ 
+                @include paramenters (120px, 120px);
+                margin: 0 auto;
+            }
+            .Diana-name{
+                text-align: center;
+                font-family: 'Montserrat', sans-serif;
+                font-style: normal;
+                font-weight: bold;
+                font-size: 14px;
+                line-height: 17px;
+                color: #444444;
+                margin-top: 17px;
+                padding-bottom: 22px;
+            }
+            .Diana-portfolio{
+                text-align: center;
+                font-family: 'Roboto', sans-serif;
+                font-style: normal;
+                font-weight: 300;
+                font-size: 14px;
+                line-height: 14px;
+                color: #666666;
+            }
+        }
+        .Christopher{
+            @include paramenters (221px, 205px);
+            padding: {
+                top: 34px;
+                right: 19px;
+                bottom: 19px;
+                
+            }
+            .Christopher-pic{ 
+                @include paramenters (120px, 120px);
+                margin: 0 auto;
+            }
+            .Christopher-name{
+                text-align: center;
+                font-family: 'Montserrat', sans-serif;
+                font-style: normal;
+                font-weight: bold;
+                font-size: 14px;
+                line-height: 17px;
+                color: #444444;
+                margin-top: 17px;
+                padding-bottom: 22px;
+            }
+            .Christopher-portfolio{
+                text-align: center;
+                font-family: 'Roboto', sans-serif;
+                font-style: normal;
+                font-weight: 300;
+                font-size: 14px;
+                line-height: 14px;
+                color: #666666;
+            }
+        }
+        
+    }
+    .see-others{
+        width: 180px;
+        height: 40px;
+        background: #FFFFFF;
+        border: 2px solid #FF4E50;
+        box-sizing: border-box;
+        border-radius: 40px;
+        margin: 0 auto;
+        display: block;
+        margin-top: 36px;
+        .see-others-link{
+            font-family: 'Montserrat', sans-serif;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 14px;
+            line-height: 17px;color: #FF4E50;
+            text-decoration: none;
+        }
+    }
+    
+}
+//Ideas
+.ideas-block{
+    margin-top: 90px;
+    .ideas-block-title{
+        font-family: 'Montserrat', sans-serif;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 26px;
+        line-height: 32px;
+        color: #444444;
+        margin: {
+            top:89px;
+            bottom:25px;
+        }
+        text-align: center;
+    }
+    .sports{
+        display: flex;
+        justify-content: center; 
+
+        .sports-activities{
+            background-image: url(images/Sport.png);
+            @include paramenters (300px, 310px);
+            position: relative;
+            margin: 10px;
+            .name{
+                font-family: 'Montserrat', sans-serif;
+                font-style: normal;
+                font-weight: bold;
+                font-size: 22px;
+                line-height: 27px; 
+                color: #FFFFFF;
+                margin: 0;
+                position: absolute;               
+                top: 50%;
+                left: 50%;
+                margin-right: -50%;
+                transform: translate(-50%, -50%);
+            }
+        }
+        .health{
+            background-image: url(images/Healath.png);
+            @include paramenters (300px, 310px);
+            position: relative;
+            margin: 10px;
+            .name{
+                font-family: 'Montserrat', sans-serif;
+                font-style: normal;
+                font-weight: bold;
+                font-size: 22px;
+                line-height: 27px; 
+                color: #FFFFFF;
+                margin: 0;
+                position: absolute;               
+                top: 50%;
+                left: 50%;
+                margin-right: -50%;
+                transform: translate(-50%, -50%);
+            }
+        }
+        .extreme{
+            background-image: url(images/Extreme.png);
+            @include paramenters (300px, 310px);
+            position: relative;
+            margin: 10px;
+            .name{
+                font-family: 'Montserrat', sans-serif;
+                font-style: normal;
+                font-weight: bold;
+                font-size: 22px;
+                line-height: 27px; 
+                color: #FFFFFF;
+                margin: 0;
+                position: absolute;               
+                top: 50%;
+                left: 50%;
+                margin-right: -50%;
+                transform: translate(-50%, -50%);
+            }
+        }
+    }
+    .fun{
+        display: flex;
+        justify-content: center;
+        .games{
+            @include paramenters (300px, 310px);
+            background-image: url(images/Games.png);
+            position: relative;
+            margin: 10px;
+            .name{
+                font-family: 'Montserrat', sans-serif;
+                font-style: normal;
+                font-weight: bold;
+                font-size: 22px;
+                line-height: 27px; 
+                color: #FFFFFF;
+                margin: 0;
+                position: absolute;               
+                top: 50%;
+                left: 50%;
+                margin-right: -50%;
+                transform: translate(-50%, -50%);
+            }
+        }
+        .culture{
+            background-image: url(images/Culture.png);
+            @include paramenters (620px, 310px);
+            position: relative;
+            margin: 10px;
+            .name{
+                font-family: 'Montserrat', sans-serif;
+                font-style: normal;
+                font-weight: bold;
+                font-size: 22px;
+                line-height: 27px; 
+                color: #FFFFFF;
+                margin: 0;
+                position: absolute;               
+                top: 50%;
+                left: 50%;
+                margin-right: -50%;
+                transform: translate(-50%, -50%);
+            }
+        }
+    }
+    .relaxation{
+        display: flex;
+        justify-content: center;
+        .relax{
+            @include paramenters (620px, 310px);
+            background-image: url(images/Relax.png);
+            position: relative;
+            margin: 10px;
+            .name{
+                font-family: 'Montserrat', sans-serif;
+                font-style: normal;
+                font-weight: bold;
+                font-size: 22px;
+                line-height: 27px; 
+                color: #FFFFFF;
+                margin: 0;
+                position: absolute;               
+                top: 50%;
+                left: 50%;
+                margin-right: -50%;
+                transform: translate(-50%, -50%);
+            }
+        }
+        .travel{ 
+            @include paramenters (300px, 310px);
+            background-image: url(images/Travel.png);
+            position: relative;
+            margin: 10px;
+            .name{
+                font-family: 'Montserrat', sans-serif;
+                font-style: normal;
+                font-weight: bold;
+                font-size: 22px;
+                line-height: 27px; 
+                color: #FFFFFF;
+                margin: 0;
+                position: absolute;               
+                top: 50%;
+                left: 50%;
+                margin-right: -50%;
+                transform: translate(-50%, -50%);
+            }
+        }
+    }
+}
+
+//Interests
+.interests{
+    margin-top: 78px;
+    .interests-title{
+        font-family: 'Montserrat', sans-serif;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 26px;
+        line-height: 32px; 
+        color: #444444;
+        text-align: center;
+        margin-bottom: 50px;
+    }
+    .interests-question{
+        font-family: 'Roboto', sans-serif;
+        font-style: normal;
+        font-weight: 300;
+        font-size: 18px;
+        line-height: 14px; 
+        color: #666666;
+        text-align: center;
+    }
+    .options{
+        display: flex;
+        justify-content: center;
+        margin: {
+            top:23px;
+            bottom: 93px;
+        }
+        .enter-text{
+        width: 299px;
+        height: 40px;
+        background: #FFFFFF;
+        border: 1px solid #D4D4D4;
+        box-sizing: border-box;
+        box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.073313);
+        border-radius: 3px; 
+        margin: 5px;
+        }
+        input{
+        &::placeholder{
+        font-family: 'Roboto', sans-serif;
+        font-style: normal;
+        font-weight: 300;
+        font-size: 14px;
+        line-height: 16px; 
+        color: #999999;
+            }
+        }
+        .search-partner{
+        width: 172.12px;
+        height: 40px;
+        background: #FF4E50;
+        border-radius: 40px;
+        border-color: transparent;
+        margin:5px;
+            .search-partner-link{
+                font-family: 'Montserrat', sans-serif;
+                font-style: normal;
+                font-weight: bold;
+                font-size: 14px;
+                line-height: 17px;
+                color: #FFFFFF;
+                text-decoration: none;
+            }
+        }
+    }
+}
+//Footer
+hr{
+    background: #FF4E50;
+    height: 1px;
+    margin-bottom: 38px;
+}
+.footer{
+    display: flex; 
+    justify-content: space-between;
+    padding-left:250px; 
+    padding-right:250px;
+    .dreamshare-footer-logo{
+        font-family: 'Montserrat', sans-serif;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 20px; 
+        color: #FF4E50;
+        text-align: center; 
+    }
+   
+    .company-title{
+        font-family: 'Montserrat', sans-serif;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 17px; 
+        color: #444444;
+        
+    }
+    .list-item{
+        font-family: 'Roboto', sans-serif;
+        font-style: normal;
+        font-weight: 300;
+        font-size: 14px;
+        line-height: 26px;
+        color: #999999;
+        text-decoration: none;
+        
+    }
+    .partners-title{
+        font-family: 'Montserrat', sans-serif;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 17px; 
+        color: #444444;
+        text-align: center; 
+    }
+    .designed-by{
+        font-family: 'Montserrat', sans-serif;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 10px;
+        line-height: 12px;
+        color: #CCCCCC;
+        text-align: center;
+        margin-bottom: 7px;
+    }
+}
+
+//media screen
+
+@media screen and (max-width:768px){
+.footer{
+    padding-left:35px;
+    padding-right:35px;
+}
+.meet-partner-section .persons .persons-first-block{
+    flex-direction: column;
+}
+.meet-partner-section .persons .persons-second-block{
+    flex-direction: column;
+}
+}
+@media screen and (max-width:320px){
+    header{
+        padding-bottom: 35px;
+    }
+    .header_block .logo_login_signup .logo{
+            margin-top: 97px; 
+        }
+    .header_block{
+        width: 100%;
+        height: 540px;
+        background-image: url(images/Backgroundsmall.png);
+    }
+    .logo_login_signup{
+            
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+        margin-top: -20px;
+    }
+   
+       .header_block .header_block_content{
+            .title{
+                font-size: 30px;
+                line-height: 35px;
+                 margin-top: 25px;
+            }
+            .subtitle{
+                margin-top: 10px;
+                font-size: 20px;
+                text-align: center;
+            }
+            .red_button{
+                margin-top: 15px;
+                width: 280px;
+            }
+        }
+    
+    .how_it_works .how_it_works_main_block{
+        flex-direction: column; 
+        .step-1{
+            margin:15px 10px 5px 10px;
+        }
+        .step-2{
+            margin:5px 10px;
+            
+        }
+        .step-3{
+            margin:5px 10px;
+        }
+    }
+    .meet-partner-block{
+        margin-top: 35px;
+        .see-others{
+            width: 280px;
+            height: 40px;
+        }
+    }
+    .ideas-block{
+        margin-top: 35px;
+         .ideas-block-title{
+             margin-top: 0px;
+         }
+    }
+  .ideas-block .sports{
+       flex-direction: column;
+       .sports-activities{
+            height:120px;
+            background-image: url(images/SportSmall.png);
+            margin:5px 10px;
+        }
+       .health{
+            height:120px;
+            background-image: url(images/HealathSmall.png);
+            margin:5px 10px;
+        }
+        .extreme{
+            height:120px;
+            background-image: url(images/ExtremeSmall.png);
+            margin:5px 10px;
+        }
+        
+   }
+  .ideas-block .fun{
+       flex-direction: column;
+       .games{
+            height:120px;
+            width: 300px; 
+            background-image: url(images/GamesSmall.png);
+            margin:5px 10px;
+       }
+       .culture{
+            height:120px;
+            width: 300px;
+            background-image: url(images/SmallCulture.png);
+            margin:5px 10px;
+       }
+   }
+   .ideas-block .relaxation{
+       flex-direction: column;
+       .relax{
+            height:120px;
+            width: 300px; 
+            background-image: url(images/relaxationSmall.png);
+            margin:5px 10px;
+       }
+       .travel{
+            height:120px;
+            width: 300px;
+            background-image: url(images/travelSmall.png);
+            margin:5px 10px;
+       }
+   }
+   .section-interests .interests{
+       margin-top: 30px;
+       .interests-title{
+        margin-bottom: 10px;
+       }
+   }
+   .interests .options{
+       flex-wrap: wrap;
+       margin-top: 15px;
+       margin-bottom: 40px;
+   }
+   .section-interests .interests .search-partner{
+           width: 299px;
+           height: 40px;
+       }
+.footer-section .footer{
+    flex-direction: column;  
+    justify-content: center;
+}
+.footer .company-list .company-title{
+        text-align: center;
+    }
+.ul{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 6px;
+}
+.ul .row-one{
+    display: flex;
+    justify-content: space-around;
+}
+.ul .row-two{
+    display: flex;
+    justify-content: space-around;
+}
+.designed{
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+}
+hr{
+    margin-bottom: 19px;
+}
+.dreamshare-footer-logo{
+    margin-bottom: 13px;
+}
+.partners-title{
+    margin-bottom: 14px;
+}
+}
